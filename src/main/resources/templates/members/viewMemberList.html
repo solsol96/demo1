@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div class="container">
+    <div>
+        <table border="1" th:width="700px">
+            <thead>
+            <tr>
+                <th>아이디</th>
+                <th>이름</th>
+                <th>이메일</th>
+                <th>회원가입일자</th>
+                <th>회원정보 수정일자</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="member : ${list}">
+                    <td><a href="/members/info" th:href="@{/members/info(id = ${member.userId})}" th:text="${member.userId}"></a></td>
+                    <td th:text="${member.userName}"></td>
+                    <td th:text="${member.userEmail}"></td>
+                    <td th:text="${member.userRegdate}"></td>
+                    <td th:text="${member.userUpdatedate}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>

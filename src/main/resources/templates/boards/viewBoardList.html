@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div class="container">
+    <div>
+        <table border="1" th:width="700px">
+            <thead>
+            <tr>
+                <th>게시물 번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>등록일</th>
+                <th>조회수</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="board : ${list}">
+<!--                <td><a href="/boards/info" th:href="@{/members/info(id = ${member.userId})}" th:text="${member.userId}"></a></td>-->
+                <td th:text="${board.getBno()}"></td>
+                <td th:text="${board.getTitle()}"></td>
+                <td th:text="${board.getWriter()}"></td>
+                <td th:text="${board.getRegDate()}"></td>
+                <td th:text="${board.getViewCnt()}"></td>
+
+            </tr>
+            <tr><a href="/boards/new">게시글 등록</a></tr>
+            </tbody>
+        </table>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>

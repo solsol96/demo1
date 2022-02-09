@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div class="container">
+    <form action="/boards/new" method="post">
+        <table border="1" th:width="400px">
+            <tr>
+                <td>제목</td>
+                <td><input type="text" name="title" placeholder="제목을 입력해주세요."></td>
+            </tr>
+            <tr>
+                <td>작성자</td>
+                <td><input type="text" name="writer" placeholder="작성자를 입력해주세요."></td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td><input type="text" name="content" placeholder="내용을 입력해주세요."></td>
+            </tr>
+
+            <tr>
+                <td colspan="1" align="center">
+                    <input type="submit" th:value="등록">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div> <!-- /container -->
+</body>
+</html>

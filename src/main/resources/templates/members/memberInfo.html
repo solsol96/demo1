@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div class="container">
+    <form id="frm" action="/members/info" method="post">
+        <table border="1" th:width="400px">
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" th:name="userId" th:value="${dto.userId}" readonly="readonly"></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" th:name= "userPw"></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" th:name="userName" th:value="${dto.userName}"></td>
+            </tr>
+            <tr>
+                <td>이메일 주소</td>
+                <td><input type="email" th:name="userEmail" th:value="${dto.userEmail}"></td>
+            </tr>
+            <tr>
+                <td>가입 일자</td>
+                <td><input th:value="${#dates.format(dto.userRegdate,'yyyy-MM-dd HH:mm')}" readonly="readonly"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" th:value="수정" >
+<!--                    <input type="submit" th:value="삭제" >-->
+                </td>
+            </tr>
+        </table>
+    </form>
+</div> <!-- /container -->
+</body>
+</html>
